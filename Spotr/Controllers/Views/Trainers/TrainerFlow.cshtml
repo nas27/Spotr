@@ -1,0 +1,38 @@
+﻿@model IEnumerable<Spotr.Trainer>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Top Trainers</h2>
+
+<p>
+    @Html.ActionLink("Become a trainer", "Create")
+</p>
+
+@{ int i = 1;}
+@foreach (var item in Model)
+{
+    <div class="row">
+        <div class="col-sm-2">
+            <h2 class="h2-responsive " style="text-align: center; font-size: 7em;">
+                #@i
+                @{i++;}
+            </h2>
+            <h5 style="text-align: center;">
+                Rating: @Html.DisplayFor(modelItem => item.Rating)
+            </h5>
+        </div>
+            <div class="col-sm-10">
+                <h2 class="display-1">
+                    @Html.DisplayFor(modelItem => item.FirstName)
+                    @Html.DisplayFor(modelItem => item.LastName)
+                </h2>
+                
+                <p><strong>Age:</strong> @Html.DisplayFor(modelItem => item.Age)</p>
+                <p><strong>Country</strong>: @Html.DisplayFor(modelItem => item.Country)</p>
+                <p><strong>Skill Level:</strong> @Html.DisplayFor(modelItem => item.Skill)</p>
+                <p><strong>Specialty:</strong> @Html.DisplayFor(modelItem => item.Specialty1.Type)</p>  
+            </div>
+        </div>
+}
