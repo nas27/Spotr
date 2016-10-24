@@ -10,6 +10,7 @@ namespace Spotr.Controllers
     {
         public ActionResult Index()
         {
+            //Im the Best
             return View();
         }
 
