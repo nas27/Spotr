@@ -52,6 +52,8 @@
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -167,20 +169,17 @@
     <Compile Include="App_Start\IdentityConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
-    <Compile Include="Capstone.cs" />
     <Compile Include="Controllers\AccountController.cs" />
-    <Compile Include="Controllers\Exercis1Controller.cs" />
     <Compile Include="Controllers\ExercisController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
-    <Compile Include="Controllers\SpecialtiesController.cs" />
-    <Compile Include="Controllers\TrainersController.cs" />
     <Compile Include="Controllers\UsersController.cs" />
     <Compile Include="Controllers\WorkoutsController.cs" />
     <Compile Include="Exercis.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Model1.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
@@ -188,17 +187,11 @@
     <Compile Include="obj\Debug\TemporaryGeneratedFile_5937a670-0e60-4077-877b-f7221da3dda1.cs" />
     <Compile Include="obj\Debug\TemporaryGeneratedFile_E7A71F73-0F8D-4B9B-B56E-8E70B10BC5D3.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Specialty.cs" />
     <Compile Include="Startup.cs" />
-    <Compile Include="Trainer.cs" />
     <Compile Include="User.cs" />
     <Compile Include="Workout.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="App_Data\aspnet-Spotr-20161019092213.mdf" />
-    <Content Include="App_Data\aspnet-Spotr-20161019092213_log.ldf">
-      <DependentUpon>aspnet-Spotr-20161019092213.mdf</DependentUpon>
-    </Content>
     <Content Include="App_Data\DefaultConnection.mdf" />
     <Content Include="App_Data\DefaultConnection_log.ldf">
       <DependentUpon>DefaultConnection.mdf</DependentUpon>
@@ -342,16 +335,27 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Views\Exercis\Create.cshtml" />
+    <Content Include="Views\Exercis\Delete.cshtml" />
+    <Content Include="Views\Exercis\Details.cshtml" />
+    <Content Include="Views\Exercis\Edit.cshtml" />
+    <Content Include="Views\Exercis\Index.cshtml" />
+    <Content Include="Views\Users\Create.cshtml" />
+    <Content Include="Views\Users\Delete.cshtml" />
+    <Content Include="Views\Users\Details.cshtml" />
+    <Content Include="Views\Users\Edit.cshtml" />
+    <Content Include="Views\Users\Index.cshtml" />
+    <Content Include="Views\Workouts\Create.cshtml" />
+    <Content Include="Views\Workouts\Delete.cshtml" />
+    <Content Include="Views\Workouts\Details.cshtml" />
+    <Content Include="Views\Workouts\Edit.cshtml" />
+    <Content Include="Views\Workouts\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Images\" />
     <Folder Include="obj\Debug\TempPE\" />
     <Folder Include="Views\Exercis1\" />
-    <Folder Include="Views\Exercis\" />
     <Folder Include="Views\Specialties\" />
-    <Folder Include="Views\Trainers\" />
-    <Folder Include="Views\Users\" />
-    <Folder Include="Views\Workouts\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />

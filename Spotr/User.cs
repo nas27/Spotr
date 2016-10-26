@@ -39,6 +39,13 @@ namespace Spotr
         [Required]
         public string SkillLevel { get; set; }
 
+        public bool IsTrainer { get; set; }
+
+        [Required]
+        public string Specialty { get; set; }
+
+        public short Rating { get; set; }
+
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Workout> Workouts { get; set; }
     }

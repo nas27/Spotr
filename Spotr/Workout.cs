@@ -18,14 +18,13 @@ namespace Spotr
 
         public DateTime DateCreated { get; set; }
 
-        public int User_Id { get; set; }
+        [Required]
+        public string Name { get; set; }
 
-        public int Trainer_Id { get; set; }
+        public int User_Id { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Exercis> Exercises { get; set; }
-
-        public virtual Trainer Trainer { get; set; }
 
         public virtual User User { get; set; }
     }

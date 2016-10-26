@@ -12,7 +12,7 @@ namespace Spotr.Controllers
 {
     public class UsersController : Controller
     {
-        private Capstone db = new Capstone();
+        private Model1 db = new Model1();
 
         // GET: Users
         public ActionResult Index()
@@ -46,7 +46,7 @@ namespace Spotr.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,FirstName,LastName,Email,Age,Weight,GoalWeight,Height,Country,SkillLevel")] User user)
+        public ActionResult Create([Bind(Include = "Id,FirstName,LastName,Email,Age,Weight,GoalWeight,Height,Country,SkillLevel,IsTrainer,Specialty,Rating")] User user)
         {
             if (ModelState.IsValid)
             {
@@ -78,7 +78,7 @@ namespace Spotr.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,FirstName,LastName,Email,Age,Weight,GoalWeight,Height,Country,SkillLevel")] User user)
+        public ActionResult Edit([Bind(Include = "Id,FirstName,LastName,Email,Age,Weight,GoalWeight,Height,Country,SkillLevel,IsTrainer,Specialty,Rating")] User user)
         {
             if (ModelState.IsValid)
             {

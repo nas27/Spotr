@@ -12,12 +12,12 @@ namespace Spotr.Controllers
 {
     public class WorkoutsController : Controller
     {
-        private Capstone db = new Capstone();
+        private Model1 db = new Model1();
 
         // GET: Workouts
         public ActionResult Index()
         {
-            var workouts = db.Workouts.Include(w => w.Trainer).Include(w => w.User);
+            var workouts = db.Workouts.Include(w => w.User);
             return View(workouts.ToList());
         }
 
@@ -39,7 +39,6 @@ namespace Spotr.Controllers
         // GET: Workouts/Create
         public ActionResult Create()
         {
-            ViewBag.Trainer_Id = new SelectList(db.Trainers, "Id", "Specialty");
             ViewBag.User_Id = new SelectList(db.Users, "Id", "FirstName");
             return View();
         }
@@ -49,7 +48,7 @@ namespace Spotr.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,DateCreated,User_Id,Trainer_Id")] Workout workout)
+        public ActionResult Create([Bind(Include = "Id,DateCreated,Name,User_Id")] Workout workout)
         {
             if (ModelState.IsValid)
             {
@@ -58,7 +57,6 @@ namespace Spotr.Controllers
                 return RedirectToAction("Index");
             }
 
-            ViewBag.Trainer_Id = new SelectList(db.Trainers, "Id", "Specialty", workout.Trainer_Id);
             ViewBag.User_Id = new SelectList(db.Users, "Id", "FirstName", workout.User_Id);
             return View(workout);
         }
@@ -75,7 +73,6 @@ namespace Spotr.Controllers
             {
                 return HttpNotFound();
             }
-            ViewBag.Trainer_Id = new SelectList(db.Trainers, "Id", "Specialty", workout.Trainer_Id);
             ViewBag.User_Id = new SelectList(db.Users, "Id", "FirstName", workout.User_Id);
             return View(workout);
         }
@@ -85,7 +82,7 @@ namespace Spotr.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,DateCreated,User_Id,Trainer_Id")] Workout workout)
+        public ActionResult Edit([Bind(Include = "Id,DateCreated,Name,User_Id")] Workout workout)
         {
             if (ModelState.IsValid)
             {
@@ -93,7 +90,6 @@ namespace Spotr.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            ViewBag.Trainer_Id = new SelectList(db.Trainers, "Id", "Specialty", workout.Trainer_Id);
             ViewBag.User_Id = new SelectList(db.Users, "Id", "FirstName", workout.User_Id);
             return View(workout);
         }

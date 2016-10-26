@@ -1,10 +1,10 @@
 ﻿@model IEnumerable<Spotr.User>
 
 @{
-    ViewBag.Title = "Users";
+    ViewBag.Title = "Index";
 }
 
-<h2>People Getting in Shape:</h2>
+<h2>Index</h2>
 
 <p>
     @Html.ActionLink("Create New", "Create")
@@ -38,6 +38,15 @@
         <th>
             @Html.DisplayNameFor(model => model.SkillLevel)
         </th>
+        <th>
+            @Html.DisplayNameFor(model => model.IsTrainer)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Specialty)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Rating)
+        </th>
         <th></th>
     </tr>
 
@@ -69,6 +78,15 @@
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.SkillLevel)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.IsTrainer)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Specialty)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Rating)
         </td>
         <td>
             @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |

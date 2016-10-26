@@ -12,7 +12,7 @@ namespace Spotr.Controllers
 {
     public class ExercisController : Controller
     {
-        private Capstone db = new Capstone();
+        private Model1 db = new Model1();
 
         // GET: Exercis
         public ActionResult Index()
@@ -39,7 +39,7 @@ namespace Spotr.Controllers
         // GET: Exercis/Create
         public ActionResult Create()
         {
-            ViewBag.Workout_Id = new SelectList(db.Workouts, "Id", "Id");
+            ViewBag.Workout_Id = new SelectList(db.Workouts, "Id", "Name");
             return View();
         }
 
@@ -57,7 +57,7 @@ namespace Spotr.Controllers
                 return RedirectToAction("Index");
             }
 
-            ViewBag.Workout_Id = new SelectList(db.Workouts, "Id", "Id", exercis.Workout_Id);
+            ViewBag.Workout_Id = new SelectList(db.Workouts, "Id", "Name", exercis.Workout_Id);
             return View(exercis);
         }
 
@@ -73,7 +73,7 @@ namespace Spotr.Controllers
             {
                 return HttpNotFound();
             }
-            ViewBag.Workout_Id = new SelectList(db.Workouts, "Id", "Id", exercis.Workout_Id);
+            ViewBag.Workout_Id = new SelectList(db.Workouts, "Id", "Name", exercis.Workout_Id);
             return View(exercis);
         }
 
@@ -90,7 +90,7 @@ namespace Spotr.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            ViewBag.Workout_Id = new SelectList(db.Workouts, "Id", "Id", exercis.Workout_Id);
+            ViewBag.Workout_Id = new SelectList(db.Workouts, "Id", "Name", exercis.Workout_Id);
             return View(exercis);
         }
 
